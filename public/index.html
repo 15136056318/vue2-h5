@@ -1,0 +1,37 @@
+<!--
+ * @Description: 
+ * @Author: LiuYan
+ * @Date: 2022-02-11 08:59:47
+ * @LastEditTime: 2022-03-24 14:51:39
+ * @LastEditors: LiuYan
+ * @Reference: 
+-->
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      window._AMapSecurityConfig = {
+        securityJsCode: '3e54689b152ad7d6f858034989b94a47',
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://webapi.amap.com/maps?v=2.0&key=afff1124493652573b05093f4d112903"
+    ></script>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly
+        without JavaScript enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
