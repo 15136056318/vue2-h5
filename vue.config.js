@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LiuYan
  * @Date: 2022-02-10 21:30:13
- * @LastEditTime: 2022-04-07 16:41:55
+ * @LastEditTime: 2022-04-08 09:11:14
  * @LastEditors: LiuYan
  * @Reference:
  */
@@ -11,6 +11,7 @@ const { resolve } = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CompressionPlugin = require('compression-webpack-plugin')
 const { HTTP } = require('./src/config/index')
+const px2rem = require('postcss-px2rem')
 module.exports = {
   //基本路径
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
@@ -97,5 +98,17 @@ module.exports = {
   //webpack链式操作
   chainWebpack: config => {
     config.externals({}) // 通过cdn引入
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          px2rem({
+            // 不想被转换成rem，将px大写即可
+            remUnit: 37.5,
+          }),
+        ],
+      },
+    },
   },
 }
