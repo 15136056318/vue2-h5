@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LiuYan
  * @Date: 2022-04-27 15:41:52
- * @LastEditTime: 2022-04-27 15:44:40
+ * @LastEditTime: 2022-04-27 15:48:49
  * @LastEditors: LiuYan
  * @Reference: 
 -->
@@ -87,7 +87,7 @@ export default {
             offset: [10, 20], //定位按钮与设置的停靠位置的偏移量，默认：[10, 20]
             zoomToAccuracy: true, //定位成功后是否自动调整地图视野到定位点
           })
-          // this.map.addControl(geolocation)
+          this.map.addControl(geolocation)
           geolocation.getCurrentPosition(
             function (status, result) {
               if (status == 'complete') {
