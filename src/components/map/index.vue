@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LiuYan
  * @Date: 2022-04-27 15:41:52
- * @LastEditTime: 2022-04-27 15:48:49
+ * @LastEditTime: 2022-04-27 16:11:44
  * @LastEditors: LiuYan
  * @Reference: 
 -->
@@ -35,6 +35,7 @@ export default {
     readerMap() {
       this.map = new window.AMap.Map('container', this.mapConfig)
       this.mapClick()
+      this.getCurrentLocation()
       this.addMarker({ lngLat: [120.209741, 30.246767] })
     },
     //地图坐标点
@@ -76,6 +77,7 @@ export default {
       })
       this.infoWindow.open(this.map, position)
     },
+    // 获取当前位置
     getCurrentLocation() {
       AMap.plugin(
         'AMap.Geolocation',
